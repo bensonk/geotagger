@@ -9,6 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20100604044834) do
+
+  create_table "photos", :force => true do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
