@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Maps and stuff!</title>
+    <%= stylesheet_link_tag "screen" %>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
+    <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false&x=" %>
+    <%= javascript_include_tag "maps" %>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Maps and stuff!</h1>
+      <% if flash[:error] %>
+        <%= render :partial => "maps/error", :object => flash[:error] %>
+      <% end -%>
+      <% if flash[:errors] %>
+        <% render :partial => "maps/error", :collection => flash[:errors] %>
+      <% end -%>
+      <% if flash[:notice] %>
+        <%= render :partial => "maps/notice", :object => flash[:notice] %>
+      <% end -%>
+      <% if flash[:notices] %>
+        <% render :partial => "maps/notice", :collection => flash[:notices] %>
+      <% end -%>
+    </div>
+    <div id="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
